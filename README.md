@@ -1,110 +1,154 @@
-# MarketLens — Financial Market Analysis Dashboard
+# MarketLens — Financial Market Analysis
 
-**A Python-based financial market research and technical analysis project**
+**Python-Based Stock Market Technical and Quantitative Analysis**
 
-MarketLens is a financial analytics project focused on analyzing historical stock prices, identifying market trends, and evaluating investment risk through quantitative techniques.
+MarketLens is a Python-based financial market analysis project that retrieves historical stock market data, calculates technical indicators, visualizes price movements, and evaluates historical market risk.
 
-The project combines financial market concepts with Python programming, statistical analysis, and data visualization to make historical market behavior easier to study.
+The project combines financial market knowledge with programming, statistics, and data visualization to support educational research into stock market behavior.
 
-## Features
+## Key Features
 
-The project is organized around the following analytical components:
+### 1. Historical Market Data
+- Retrieves historical OHLCV data using `yfinance`.
+- Processes stock market data using Pandas.
+- Supports analysis of historical daily trading sessions.
 
-- **Market Data Analysis:** Historical stock prices, trading volumes, and price movements.
-- **Technical Indicators:** Simple Moving Averages (SMA), Relative Strength Index (RSI), and trend analysis.
-- **Financial Visualization:** Price charts, candlestick charts, and indicator visualizations.
-- **Return Analysis:** Daily returns and cumulative performance.
-- **Risk Analysis:** Historical volatility and drawdown calculations.
-- **Asset Comparison:** Comparative analysis of multiple stocks and market indices.
+### 2. Technical Indicators
+- **SMA 20:** 20-session Simple Moving Average.
+- **SMA 50:** 50-session Simple Moving Average.
+- **RSI 14:** Relative Strength Index calculated using Wilder's smoothing.
+- Basic trend and momentum interpretation.
 
-**Development status:** Initial implementation in progress. Features will be marked as completed after testing.
+### 3. Financial Data Visualization
+- Interactive candlestick charts using Plotly.
+- SMA 20 and SMA 50 overlays.
+- RSI visualization with reference levels of 30 and 70.
+- Cumulative price return and drawdown charts.
+
+### 4. Quantitative Risk Analysis
+- Daily percentage returns.
+- Cumulative historical price returns.
+- Annualized historical volatility.
+- Maximum historical closing-price drawdown.
+
+### 5. Exportable Results
+- Financial analysis dataset in CSV format.
+- Interactive candlestick chart in HTML format.
+- Reproducible Google Colab notebook.
 
 ## Technology Stack
 
-| Technology | Application |
+| Technology | Purpose |
 |---|---|
-| Python | Financial calculations and data processing |
-| Pandas | Data manipulation |
-| NumPy | Numerical analysis |
-| yfinance | Historical financial data |
-| Matplotlib | Statistical visualization |
-| Plotly | Interactive financial charts |
-| Google Colab | Development environment |
-| Streamlit | Dashboard interface |
+| Python | Core programming |
+| Pandas | Financial data processing |
+| NumPy | Numerical calculations |
+| yfinance | Historical market data |
+| Matplotlib | Data visualization |
+| Plotly | Interactive candlestick charts |
+| Google Colab | Notebook development and execution |
+| GitHub | Version control and project hosting |
 
-## Project Architecture
+## Repository Structure
 
 ```text
 MarketLens/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
-│   └── market_analysis.ipynb
-├── src/
-│   ├── data_loader.py
-│   ├── technical_indicators.py
-│   └── risk_metrics.py
-├── outputs/
-│   └── charts/
-└── tests/
+│   └── MarketLens_Stock_Analysis.ipynb
+└── outputs/
+    ├── marketlens_full_analysis.csv
+    └── marketlens_candlestick_chart.html
 ```
 
-## Installation
+## Installation and Usage
 
-The project uses Python 3 and commonly available financial data analysis libraries.
+### Option 1: Google Colab
+
+1. Download `MarketLens_Stock_Analysis.ipynb` from the `notebooks` directory.
+2. Open Google Colab.
+3. Upload the notebook.
+4. Execute the cells sequentially.
+5. Review the technical indicators, charts, and risk analysis report.
+
+### Option 2: Local Python Environment
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/jayeshdhingra1234/MarketLens.git
 cd MarketLens
-pip install pandas numpy yfinance matplotlib plotly streamlit
 ```
 
-The application entry point and run commands will be documented after implementation.
+Install dependencies:
 
-## Analysis Methodology
+```bash
+pip install -r requirements.txt
+```
 
-### 1. Historical Market Data
+Open the notebook in a compatible Jupyter environment and execute its cells.
 
-MarketLens uses historical Open, High, Low, Close, and Volume (OHLCV) data as the foundation for financial analysis.
+An internet connection is required to retrieve historical financial data.
 
-### 2. Technical Analysis
+## Financial Analysis Methodology
 
-The analytical approach includes:
+### Simple Moving Average
 
-- 20-day Simple Moving Average
-- 50-day Simple Moving Average
-- 14-period Relative Strength Index
-- Price momentum and trend interpretation
+The SMA measures the average closing price over a selected number of trading sessions.
 
-### 3. Quantitative Risk Analysis
+MarketLens calculates SMA 20 and SMA 50 to examine historical trend direction.
 
-The project examines:
+### Relative Strength Index
 
-- Percentage returns
-- Historical volatility
-- Maximum drawdown
-- Comparative asset performance
+The 14-period RSI measures the relative strength of recent gains and losses.
 
-### 4. Financial Market Research
+Conventional reference levels are:
 
-MarketLens is designed to support research into stock price behavior, market trends, and the relationship between returns and risk.
+- Above 70: Overbought zone
+- Below 30: Oversold zone
+- Between 30 and 70: Intermediate zone
+
+These levels are descriptive indicators, not guaranteed trading signals.
+
+### Historical Volatility
+
+Annualized historical volatility is estimated using the standard deviation of daily returns multiplied by the square root of 252.
+
+### Maximum Drawdown
+
+Maximum drawdown measures the largest decline from a previous closing-price peak within the selected historical period.
+
+## Sample Analysis
+
+The initial implementation analyzes historical daily price data for Reliance Industries (`RELIANCE.NS`).
+
+The notebook produces:
+
+- Technical indicator calculations
+- Price and momentum charts
+- Historical return measurements
+- Volatility and drawdown statistics
+- Exportable analysis files
+
+Results depend on the date and market data available when the notebook is executed.
 
 ## Future Enhancements
 
-- Fundamental analysis using financial statements
-- International market indices
-- Currency and commodity analysis
-- Futures market data integration
-- Portfolio performance analytics
+- Fundamental financial statement analysis
+- Stock and index comparisons
+- International futures and commodities analysis
+- Portfolio risk analytics
 - Interactive Streamlit dashboard
 
-## Project Purpose
+## Limitations
 
-MarketLens was initiated to explore the practical application of programming, mathematics, and financial market analysis.
-
-The project reflects an interest in technical analysis, quantitative research, financial markets, and data-driven decision-making.
+- Historical price indicators do not predict future returns reliably.
+- Market data availability depends on the external data provider.
+- Volatility and drawdown calculations describe historical behavior.
+- The current version is a notebook-based analytical tool, not a live trading system.
+- The project does not execute trades.
 
 ## Disclaimer
 
-This project is intended for educational and research purposes only. It does not provide financial advice or guarantee the accuracy of market forecasts.
-
+MarketLens is developed for educational and financial research purposes. It does not provide personalized investment recommendations or guarantee trading profitability.
