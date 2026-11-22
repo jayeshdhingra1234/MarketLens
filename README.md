@@ -3,6 +3,16 @@
 
 A Python and Streamlit application for analyzing historical stock market data, technical indicators, and quantitative risk.
 
+
+## Live Dashboard
+
+🚀 **Try MarketLens Online**
+
+[Open MarketLens Financial Analysis Dashboard](https://marketlens-jayesh.streamlit.app/)
+
+Explore historical stock prices, technical indicators,
+risk metrics, and multiple-stock comparisons.
+
 ## Overview
 
 MarketLens combines Python programming with financial market analysis. It retrieves historical OHLCV data, calculates technical indicators, measures investment risk, and visualizes historical stock performance.
